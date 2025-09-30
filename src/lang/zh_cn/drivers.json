@@ -1,0 +1,1445 @@
+{
+  "115 Cloud": {
+    "cookie": "Cookie",
+    "cookie-tips": "Choose either QR code token or Cookie",
+    "limit_rate": "Rate limit",
+    "limit_rate-tips": "Limit all API request rates ([limit] times/1 second)",
+    "page_size": "Page size",
+    "page_size-tips": "Page size for each API list request in 115 driver",
+    "qrcode_source": "QR code source",
+    "qrcode_source-tips": "Select the QR code device, default is linux",
+    "qrcode_sources": {
+      "alipaymini": "Alipay Mini Program",
+      "android": "Android",
+      "ios": "iOS",
+      "qandroid": "Q Android",
+      "tv": "TV",
+      "web": "Web",
+      "wechatmini": "WeChat Mini Program"
+    },
+    "qrcode_token": "QR code token",
+    "qrcode_token-tips": "Choose either QR code token or Cookie",
+    "root_folder_id": "Root folder ID"
+  },
+  "115 Open": {
+    "access_token": "Access token",
+    "limit_rate": "Rate limit",
+    "limit_rate-tips": "Limit all API request rates ([limit] times/1 second)",
+    "order_by": "Order by",
+    "order_bys": {
+      "file_name": "File name",
+      "file_size": "File size",
+      "file_type": "File type",
+      "user_utime": "User modified time"
+    },
+    "order_direction": "Order direction",
+    "order_directions": {
+      "asc": "Ascending",
+      "desc": "Descending"
+    },
+    "refresh_token": "Refresh token",
+    "root_folder_id": "Root folder ID"
+  },
+  "115 Share": {
+    "cookie": "Cookie",
+    "cookie-tips": "Choose either QR code token or Cookie",
+    "limit_rate": "Rate limit",
+    "limit_rate-tips": "Limit all API request rates (1 time/[limit_rate] seconds)",
+    "page_size": "Page size",
+    "page_size-tips": "Page size for each API list request in 115 driver",
+    "qrcode_source": "QR code source",
+    "qrcode_source-tips": "Select the QR code device, default is linux",
+    "qrcode_sources": {
+      "alipaymini": "Alipay Mini Program",
+      "android": "Android",
+      "ios": "iOS",
+      "qandroid": "Q Android",
+      "tv": "TV",
+      "web": "Web",
+      "wechatmini": "WeChat Mini Program"
+    },
+    "qrcode_token": "QR code token",
+    "qrcode_token-tips": "Choose either QR code token or Cookie",
+    "receive_code": "Receive code",
+    "receive_code-tips": "Receive code for 115 share link",
+    "root_folder_id": "Root folder ID",
+    "share_code": "Share code",
+    "share_code-tips": "Share code for 115 share link"
+  },
+  "123 Open": {
+    "AccessToken": "Access token",
+    "ClientID": "Client ID",
+    "ClientSecret": "Client secret",
+    "DirectLink": "Direct link",
+    "DirectLink-tips": "Use direct link for downloading files",
+    "DirectLinkPrivateKey": "Direct link private key",
+    "DirectLinkPrivateKey-tips": "Direct link private key if URL authentication is enabled",
+    "DirectLinkValidDuration": "Direct link validity",
+    "DirectLinkValidDuration-tips": "Duration in minutes if URL authentication is enabled",
+    "RefreshToken": "Refresh token",
+    "UploadThread": "Upload threads",
+    "UploadThread-tips": "Number of upload threads",
+    "root_folder_id": "Root folder ID"
+  },
+  "123Pan": {
+    "UploadThread": "Upload threads",
+    "UploadThread-tips": "Number of upload threads",
+    "password": "Password",
+    "root_folder_id": "Root folder ID",
+    "username": "Username"
+  },
+  "123PanLink": {
+    "origin_urls": "Original URLs",
+    "origin_urls-tips": "Format: Folder name:\n  [File size:][Modified time:]URL",
+    "private_key": "Private key",
+    "uid": "User ID",
+    "valid_duration": "Validity",
+    "valid_duration-tips": "Duration in minutes"
+  },
+  "123PanShare": {
+    "accesstoken": "Access token",
+    "root_folder_id": "Root folder ID",
+    "sharekey": "Share key",
+    "sharepassword": "Share password"
+  },
+  "139Yun": {
+    "authorization": "Authorization",
+    "cloud_id": "Cloud ID",
+    "custom_upload_part_size": "Custom upload part size",
+    "custom_upload_part_size-tips": "0 means automatic",
+    "report_real_size": "Report real size",
+    "report_real_size-tips": "Enable to report the real file size during upload",
+    "root_folder_id": "Root folder ID",
+    "type": "Type",
+    "types": {
+      "family": "Family",
+      "group": "Group",
+      "personal": "Personal",
+      "personal_new": "New personal"
+    },
+    "use_large_thumbnail": "Use large thumbnail",
+    "use_large_thumbnail-tips": "Enable large thumbnail for images"
+  },
+  "189Cloud": {
+    "cookie": "Cookie",
+    "cookie-tips": "Fill in Cookie if captcha is required",
+    "password": "Password",
+    "root_folder_id": "Root folder ID",
+    "username": "Username"
+  },
+  "189CloudPC": {
+    "family_id": "Family ID",
+    "family_transfer": "Family transfer",
+    "login_type": "Login type",
+    "login_types": {
+      "password": "Password",
+      "qrcode": "QR code"
+    },
+    "no_use_ocr": "No use OCR",
+    "order_by": "Order by",
+    "order_bys": {
+      "filename": "Filename",
+      "filesize": "Filesize",
+      "lastOpTime": "Last operation time"
+    },
+    "order_direction": "Order direction",
+    "order_directions": {
+      "asc": "Ascending",
+      "desc": "Descending"
+    },
+    "password": "Password",
+    "rapid_upload": "Rapid upload",
+    "refresh_token": "Refresh token",
+    "refresh_token-tips": "Clear this field to switch accounts",
+    "root_folder_id": "Root folder ID",
+    "type": "Type",
+    "types": {
+      "family": "Family",
+      "personal": "Personal"
+    },
+    "upload_method": "Upload method",
+    "upload_methods": {
+      "old": "Old",
+      "rapid": "Rapid",
+      "stream": "Stream"
+    },
+    "upload_thread": "Upload threads",
+    "upload_thread-tips": "1 <= thread <= 32",
+    "username": "Username",
+    "validate_code": "Validate code"
+  },
+  "189CloudTV": {
+    "access_token": "访问令牌",
+    "family_id": "家庭ID",
+    "order_by": "排序方式",
+    "order_bys": {
+      "filename": "文件名",
+      "filesize": "文件大小",
+      "lastOpTime": "最后操作时间"
+    },
+    "order_direction": "排序方向",
+    "order_directions": {
+      "asc": "升序",
+      "desc": "降序"
+    },
+    "rapid_upload": "极速上传",
+    "root_folder_id": "根文件夹ID",
+    "type": "类型",
+    "types": {
+      "family": "家庭",
+      "personal": "个人"
+    },
+    "upload_thread": "上传线程数",
+    "upload_thread-tips": "1<=线程数<=32"
+  },
+  "Alias": {
+    "download_concurrency": "下载并发数",
+    "download_concurrency-tips": "需要启用代理",
+    "download_part_size": "下载分块大小",
+    "download_part_size-tips": "需要启用代理，单位：KB",
+    "parallel_write": "并行写入",
+    "paths": "路径",
+    "protect_same_name": "同名保护",
+    "protect_same_name-tips": "防止同名文件被删除或重命名",
+    "provider_pass_through": "提供者直通",
+    "writable": "可写"
+  },
+  "Aliyundrive": {
+    "internal_upload": "内网上传",
+    "order_by": "排序方式",
+    "order_bys": {
+      "created_at": "创建时间",
+      "name": "名称",
+      "size": "大小",
+      "updated_at": "更新时间"
+    },
+    "order_direction": "排序方向",
+    "order_directions": {
+      "ASC": "升序",
+      "DESC": "降序"
+    },
+    "rapid_upload": "极速上传",
+    "refresh_token": "刷新令牌",
+    "root_folder_id": "根文件夹ID"
+  },
+  "AliyundriveOpen": {
+    "alipan_type": "阿里云盘类型",
+    "alipan_types": {
+      "alipanTV": "阿里云盘TV",
+      "default": "默认"
+    },
+    "api_url_address": "API URL地址",
+    "client_id": "客户端ID",
+    "client_id-tips": "如果没有，请留空",
+    "client_secret": "客户端密钥",
+    "client_secret-tips": "如果没有，请留空",
+    "drive_type": "驱动类型",
+    "drive_types": {
+      "backup": "备份",
+      "default": "默认",
+      "resource": "资源"
+    },
+    "internal_upload": "内网上传",
+    "internal_upload-tips": "如果您使用的是位于北京的阿里云ECS，可以开启以提升上传速度",
+    "livp_download_format": "LIVP下载格式",
+    "livp_download_formats": {
+      "jpeg": "JPEG",
+      "mov": "MOV"
+    },
+    "order_by": "排序方式",
+    "order_bys": {
+      "created_at": "创建时间",
+      "name": "名称",
+      "size": "大小",
+      "updated_at": "更新时间"
+    },
+    "order_direction": "排序方向",
+    "order_directions": {
+      "ASC": "升序",
+      "DESC": "降序"
+    },
+    "rapid_upload": "极速上传",
+    "rapid_upload-tips": "如果启用此选项，文件将先上传到服务器，因此进度将不正确",
+    "refresh_token": "刷新令牌",
+    "remove_way": "删除方式",
+    "remove_ways": {
+      "delete": "删除",
+      "trash": "回收站"
+    },
+    "root_folder_id": "根文件夹ID",
+    "use_online_api": "使用在线API"
+  },
+  "AliyundriveShare": {
+    "order_by": "排序方式",
+    "order_bys": {
+      "created_at": "创建时间",
+      "name": "名称",
+      "size": "大小",
+      "updated_at": "更新时间"
+    },
+    "order_direction": "排序方向",
+    "order_directions": {
+      "ASC": "升序",
+      "DESC": "降序"
+    },
+    "refresh_token": "刷新令牌",
+    "root_folder_id": "根文件夹ID",
+    "share_id": "分享ID",
+    "share_pwd": "分享密码"
+  },
+  "Azure Blob Storage": {
+    "access_key": "访问密钥",
+    "access_key-tips": "Azure存储的访问密钥，用于身份验证。https://learn.microsoft.com/azure/storage/common/storage-account-keys-manage",
+    "container_name": "容器名称",
+    "container_name-tips": "Azure存储中的容器名称（在Azure门户中创建）。https://learn.microsoft.com/azure/storage/blobs/blob-containers-portal",
+    "endpoint": "端点",
+    "endpoint-tips": "例如 https://accountname.blob.core.windows.net/。Azure存储的完整端点URL，包括唯一的存储帐户名称（仅3~24个数字和小写字母）。",
+    "sign_url_expire": "签名URL过期时间",
+    "sign_url_expire-tips": "SAS URL的过期时间，单位为小时。"
+  },
+  "BaiduNetdisk": {
+    "api_url_address": "API URL地址",
+    "client_id": "客户端ID",
+    "client_secret": "客户端密钥",
+    "custom_crack_ua": "自定义破解UA",
+    "custom_upload_part_size": "自定义上传分块大小",
+    "custom_upload_part_size-tips": "0表示自动",
+    "download_api": "下载API",
+    "download_apis": {
+      "crack": "破解",
+      "crack_video": "破解视频",
+      "official": "官方"
+    },
+    "low_bandwith_upload_mode": "低带宽上传模式",
+    "only_list_video_file": "仅列出视频文件",
+    "order_by": "排序方式",
+    "order_bys": {
+      "name": "名称",
+      "size": "大小",
+      "time": "时间"
+    },
+    "order_direction": "排序方向",
+    "order_directions": {
+      "asc": "升序",
+      "desc": "降序"
+    },
+    "refresh_token": "刷新令牌",
+    "root_folder_path": "根文件夹路径",
+    "upload_api": "上传API",
+    "upload_thread": "上传线程数",
+    "upload_thread-tips": "1<=线程数<=32",
+    "use_online_api": "使用在线API"
+  },
+  "BaiduPhoto": {
+    "album_id": "相册ID",
+    "cookie": "Cookie",
+    "delete_origin": "删除原图",
+    "show_type": "显示类型",
+    "show_types": {
+      "root": "根目录",
+      "root_only_album": "仅根目录相册",
+      "root_only_file": "仅根目录文件"
+    },
+    "upload_thread": "上传线程数",
+    "upload_thread-tips": "1<=线程数<=32"
+  },
+  "CNB Releases": {
+    "default_branch": "默认分支",
+    "default_branch-tips": "新版本的默认分支",
+    "repo": "仓库",
+    "root_folder_path": "根文件夹路径",
+    "token": "令牌",
+    "use_tag_name": "使用标签名",
+    "use_tag_name-tips": "使用标签名而非版本名称"
+  },
+  "ChaoXingGroupDrive": {
+    "bbsid": "论坛ID",
+    "cookie": "Cookie",
+    "password": "密码",
+    "root_folder_id": "根文件夹ID",
+    "user_name": "用户名"
+  },
+  "Chunk": {
+    "custom_ext": "自定义扩展名",
+    "part_size": "分块大小",
+    "part_size-tips": "字节",
+    "remote_path": "远程路径",
+    "show_hidden": "显示隐藏",
+    "show_hidden-tips": "显示隐藏的目录和文件",
+    "store_hash": "存储哈希",
+    "thumbnail": "缩略图",
+    "thumbnail-tips": "启用缩略图，预先生成于 .thumbnails 文件夹下"
+  },
+  "Cloudreve": {
+    "address": "地址",
+    "cookie": "Cookie",
+    "custom_ua": "自定义UA",
+    "enable_thumb_and_folder_size": "启用缩略图和文件夹大小",
+    "password": "密码",
+    "root_folder_path": "根文件夹路径",
+    "username": "用户名"
+  },
+  "Cloudreve V4": {
+    "access_token": "访问令牌",
+    "address": "地址",
+    "custom_ua": "自定义UA",
+    "enable_folder_size": "启用文件夹大小",
+    "enable_thumb": "启用缩略图",
+    "enable_version_upload": "启用版本上传",
+    "hide_uploading": "隐藏上传中",
+    "order_by": "排序方式",
+    "order_bys": {
+      "created_at": "创建时间",
+      "name": "名称",
+      "size": "大小",
+      "updated_at": "更新时间"
+    },
+    "order_direction": "排序方向",
+    "order_directions": {
+      "asc": "升序",
+      "desc": "降序"
+    },
+    "password": "密码",
+    "refresh_token": "刷新令牌",
+    "root_folder_path": "根文件夹路径",
+    "username": "用户名"
+  },
+  "Crypt": {
+    "directory_name_encryption": "目录名加密",
+    "directory_name_encryptions": {
+      "false": "否",
+      "true": "是"
+    },
+    "encrypted_suffix": "加密后缀",
+    "encrypted_suffix-tips": "仅限高级用户使用！加密文件将具有此后缀",
+    "filename_encoding": "文件名编码",
+    "filename_encoding-tips": "仅限高级用户使用！",
+    "filename_encodings": {
+      "base32": "Base32",
+      "base32768": "Base32768",
+      "base64": "Base64"
+    },
+    "filename_encryption": "文件名加密",
+    "filename_encryptions": {
+      "obfuscate": "混淆",
+      "off": "关闭",
+      "standard": "标准"
+    },
+    "password": "密码",
+    "password-tips": "主密码",
+    "remote_path": "远程路径",
+    "remote_path-tips": "这是加密数据存储的地方",
+    "salt": "盐值",
+    "salt-tips": "如果您不知道什么是盐值，请将其视为第二个密码。可选但推荐",
+    "show_hidden": "显示隐藏文件",
+    "show_hidden-tips": "显示隐藏目录和文件",
+    "thumbnail": "缩略图",
+    "thumbnail-tips": "启用缩略图，在.thumbnails文件夹下预生成"
+  },
+  "Degoo": {
+    "access_token": "访问令牌",
+    "access_token-tips": "Degoo API的访问令牌，自动获取",
+    "password": "密码",
+    "password-tips": "您的Degoo帐户密码",
+    "refresh_token": "刷新令牌",
+    "refresh_token-tips": "用于自动令牌续订的刷新令牌，自动获取",
+    "root_folder_id": "根文件夹ID",
+    "username": "用户名",
+    "username-tips": "您的Degoo帐户邮箱"
+  },
+  "Doge": {
+    "access_key_id": "访问密钥ID",
+    "add_filename_to_disposition": "在响应头添加文件名",
+    "add_filename_to_disposition-tips": "在 Content-Disposition 头中添加文件名。",
+    "bucket": "存储桶",
+    "custom_host": "自定义主机",
+    "enable_custom_host_presign": "启用自定义主机预签名",
+    "endpoint": "端点",
+    "force_path_style": "强制路径风格",
+    "list_object_version": "列出对象版本",
+    "list_object_versions": {
+      "v1": "V1",
+      "v2": "V2"
+    },
+    "placeholder": "占位符",
+    "region": "区域",
+    "remove_bucket": "移除存储桶",
+    "remove_bucket-tips": "使用自定义主机时，从路径中移除存储桶名称。",
+    "root_folder_path": "根文件夹路径",
+    "secret_access_key": "密钥访问密钥",
+    "session_token": "会话令牌",
+    "sign_url_expire": "签名URL过期时间"
+  },
+  "Doubao": {
+    "cookie": "Cookie",
+    "download_api": "下载API",
+    "download_apis": {
+      "get_download_info": "获取下载信息",
+      "get_file_url": "获取文件URL"
+    },
+    "root_folder_id": "根文件夹ID",
+    "upload_thread": "上传线程数"
+  },
+  "DoubaoShare": {
+    "cookie": "Cookie",
+    "root_folder_path": "根文件夹路径",
+    "share_ids": "分享ID"
+  },
+  "Dropbox": {
+    "RootNamespaceId": "根命名空间ID",
+    "api_url_address": "API URL地址",
+    "client_id": "客户端ID",
+    "client_id-tips": "如果没有，请留空",
+    "client_secret": "客户端密钥",
+    "client_secret-tips": "如果没有，请留空",
+    "refresh_token": "刷新令牌",
+    "root_folder_path": "根文件夹路径",
+    "use_online_api": "使用在线API"
+  },
+  "FTP": {
+    "address": "地址",
+    "encoding": "编码",
+    "password": "密码",
+    "root_folder_path": "根文件夹路径",
+    "username": "用户名"
+  },
+  "FebBox": {
+    "client_id": "客户端ID",
+    "client_secret": "客户端密钥",
+    "page_size": "分页大小",
+    "page_size-tips": "FebBox驱动每页列表API的大小",
+    "root_folder_id": "根文件夹ID",
+    "sort_rule": "排序规则",
+    "sort_rules": {
+      "ext_asc": "扩展名升序",
+      "ext_desc": "扩展名降序",
+      "name_asc": "名称升序",
+      "name_desc": "名称降序",
+      "size_asc": "大小升序",
+      "size_desc": "大小降序",
+      "update_asc": "更新时间升序",
+      "update_desc": "更新时间降序"
+    },
+    "user_ip": "用户IP",
+    "user_ip-tips": "用于下载链接的用户IP地址，可以加速下载"
+  },
+  "FeijiPan": {
+    "ip": "IP地址",
+    "password": "密码",
+    "root_folder_id": "根文件夹ID",
+    "username": "用户名"
+  },
+  "GitHub API": {
+    "author_email": "作者邮箱",
+    "author_name": "作者名称",
+    "committer_email": "提交者邮箱",
+    "committer_name": "提交者名称",
+    "copy_commit_message": "复制提交消息",
+    "delete_commit_message": "删除提交消息",
+    "gh_proxy": "GitHub代理",
+    "gh_proxy-tips": "GitHub代理，例如 https://ghproxy.net/raw.githubusercontent.com 或 https://gh-proxy.com/raw.githubusercontent.com",
+    "gpg_key_passphrase": "GPG密钥密码",
+    "gpg_private_key": "GPG私钥",
+    "mkdir_commit_message": "创建目录提交消息",
+    "move_commit_message": "移动提交消息",
+    "owner": "所有者",
+    "put_commit_message": "上传提交消息",
+    "ref": "引用",
+    "ref-tips": "分支、标签或提交SHA，默认为主分支。",
+    "rename_commit_message": "重命名提交消息",
+    "repo": "仓库",
+    "root_folder_path": "根文件夹路径",
+    "token": "令牌"
+  },
+  "GitHub Releases": {
+    "gh_proxy": "GitHub代理",
+    "gh_proxy-tips": "GitHub代理，例如 https://ghproxy.net/github.com 或 https://gh-proxy.com/github.com ",
+    "repo_structure": "仓库结构",
+    "repo_structure-tips": "结构：[路径:]组织/仓库",
+    "root_folder_id": "根文件夹ID",
+    "show_all_version": "显示所有版本",
+    "show_all_version-tips": "显示所有版本",
+    "show_readme": "显示README",
+    "show_readme-tips": "显示README、LICENSE文件",
+    "token": "令牌",
+    "token-tips": "GitHub令牌，如果您想访问私有仓库或增加速率限制"
+  },
+  "GoogleDrive": {
+    "api_url_address": "API URL地址",
+    "chunk_size": "分块大小",
+    "chunk_size-tips": "上传时的分块大小（单位：MB）",
+    "client_id": "客户端ID",
+    "client_secret": "客户端密钥",
+    "order_by": "排序方式",
+    "order_by-tips": "例如：folder,name,modifiedTime",
+    "order_direction": "排序方向",
+    "order_directions": {
+      "asc": "升序",
+      "desc": "降序"
+    },
+    "refresh_token": "刷新令牌",
+    "root_folder_id": "根文件夹ID",
+    "use_online_api": "使用在线API"
+  },
+  "GooglePhoto": {
+    "client_id": "客户端ID",
+    "client_secret": "客户端密钥",
+    "refresh_token": "刷新令牌",
+    "root_folder_id": "根文件夹ID",
+    "show_archive": "显示归档"
+  },
+  "HalalCloud": {
+    "app_id": "应用ID",
+    "app_secret": "应用密钥",
+    "app_version": "应用版本",
+    "refresh_token": "刷新令牌",
+    "refresh_token-tips": "登录类型为refresh_token，此项必填",
+    "root_folder_path": "根文件夹路径",
+    "upload_thread": "上传线程数",
+    "upload_thread-tips": "1 <= 线程数 <= 32"
+  },
+  "ILanZou": {
+    "ip": "IP地址",
+    "password": "密码",
+    "root_folder_id": "根文件夹ID",
+    "username": "用户名"
+  },
+  "IPFS API": {
+    "endpoint": "端点",
+    "gateway": "网关",
+    "mode": "模式",
+    "modes": {
+      "ipfs": "IPFS",
+      "ipns": "IPNS",
+      "mfs": "MFS"
+    },
+    "root_folder_path": "根文件夹路径"
+  },
+  "KodBox": {
+    "address": "地址",
+    "password": "密码",
+    "root_folder_path": "根文件夹路径",
+    "username": "用户名"
+  },
+  "Lanzou": {
+    "account": "帐户",
+    "baseUrl": "基础URL",
+    "baseUrl-tips": "文件操作的基础URL",
+    "cookie": "Cookie",
+    "cookie-tips": "约15天有效，如果使用shareUrl则忽略",
+    "password": "密码",
+    "repair_file_info": "修复文件信息",
+    "repair_file_info-tips": "要使用webdav，需要启用此功能",
+    "root_folder_id": "根文件夹ID",
+    "shareUrl": "分享URL",
+    "shareUrl-tips": "用于获取分享页面",
+    "share_password": "分享密码",
+    "type": "类型",
+    "types": {
+      "account": "帐户",
+      "cookie": "Cookie",
+      "url": "URL"
+    },
+    "user_agent": "用户代理"
+  },
+  "LenovoNasShare": {
+    "host": "主机",
+    "host-tips": "您可以更改为您的局域网地址",
+    "root_folder_path": "根文件夹路径",
+    "share_id": "分享ID",
+    "share_id-tips": "分享链接中最后一个/之后的部分",
+    "share_pwd": "分享密码",
+    "share_pwd-tips": "分享链接的密码",
+    "show_root_folder": "显示根文件夹"
+  },
+  "Local": {
+    "directory_size": "目录大小",
+    "directory_size-tips": "这可能会影响主机性能",
+    "mkdir_perm": "创建目录权限",
+    "recycle_bin_path": "回收站路径",
+    "recycle_bin_path-tips": "回收站路径，如果为空或保持'永久删除'则永久删除",
+    "root_folder_path": "根文件夹路径",
+    "show_hidden": "显示隐藏文件",
+    "show_hidden-tips": "显示隐藏目录和文件",
+    "thumb_cache_folder": "缩略图缓存文件夹",
+    "thumb_concurrency": "缩略图并发数",
+    "thumb_concurrency-tips": "并发生成缩略图的goroutine数量。这控制可以并行生成多少个缩略图。",
+    "thumbnail": "缩略图",
+    "thumbnail-tips": "启用缩略图",
+    "video_thumb_pos": "视频缩略图位置",
+    "video_thumb_pos-tips": "视频缩略图的位置。如果值是数字（整数或浮点数），则表示时间（秒）。如果值以'%'结尾，则表示视频持续时间的百分比。"
+  },
+  "MediaTrack": {
+    "access_token": "访问令牌",
+    "order_by": "排序方式",
+    "order_bys": {
+      "size": "大小",
+      "title": "标题",
+      "updated_at": "更新时间"
+    },
+    "order_desc": "降序排序",
+    "project_id": "项目ID",
+    "root_folder_id": "根文件夹ID"
+  },
+  "Mega_nz": {
+    "email": "邮箱",
+    "password": "密码",
+    "two_fa_code": "双因素认证码",
+    "two_fa_code-tips": "2FA 6位代码，仅填写2FA代码不支持重新加载驱动",
+    "two_fa_secret": "双因素认证密钥",
+    "two_fa_secret-tips": "2FA密钥"
+  },
+  "Misskey": {
+    "access_token": "访问令牌",
+    "endpoint": "端点",
+    "root_folder_path": "根文件夹路径"
+  },
+  "MoPan": {
+    "cloud_id": "云ID",
+    "device_info": "设备信息",
+    "order_by": "排序方式",
+    "order_bys": {
+      "filename": "文件名",
+      "filesize": "文件大小",
+      "lastOpTime": "最后操作时间"
+    },
+    "order_direction": "排序方向",
+    "order_directions": {
+      "asc": "升序",
+      "desc": "降序"
+    },
+    "password": "密码",
+    "phone": "手机号",
+    "root_folder_id": "根文件夹ID",
+    "sms_code": "短信验证码",
+    "sms_code-tips": "输入'send'发送短信",
+    "upload_thread": "上传线程数",
+    "upload_thread-tips": "1<=线程数<=32"
+  },
+  "NeteaseMusic": {
+    "cookie": "Cookie",
+    "song_limit": "歌曲限制",
+    "song_limit-tips": "默认仅获取200首歌曲"
+  },
+  "Onedrive": {
+    "api_url_address": "API URL地址",
+    "chunk_size": "分块大小",
+    "client_id": "客户端ID",
+    "client_secret": "客户端密钥",
+    "custom_host": "自定义主机",
+    "custom_host-tips": "用于onedrive下载链接的自定义主机",
+    "is_sharepoint": "是SharePoint",
+    "redirect_uri": "重定向URI",
+    "refresh_token": "刷新令牌",
+    "region": "区域",
+    "regions": {
+      "cn": "中国",
+      "de": "德国",
+      "global": "全球",
+      "us": "美国"
+    },
+    "root_folder_path": "根文件夹路径",
+    "site_id": "站点ID",
+    "use_online_api": "使用在线API"
+  },
+  "Onedrive Sharelink": {
+    "password": "密码",
+    "root_folder_path": "根文件夹路径",
+    "url": "URL"
+  },
+  "OnedriveAPP": {
+    "chunk_size": "分块大小",
+    "client_id": "客户端ID",
+    "client_secret": "客户端密钥",
+    "custom_host": "自定义主机",
+    "custom_host-tips": "用于onedrive下载链接的自定义主机",
+    "email": "邮箱",
+    "region": "区域",
+    "regions": {
+      "cn": "中国",
+      "de": "德国",
+      "global": "全球",
+      "us": "美国"
+    },
+    "root_folder_path": "根文件夹路径",
+    "tenant_id": "租户ID"
+  },
+  "OpenList": {
+    "forward_archive_requests": "转发归档请求",
+    "meta_password": "元数据密码",
+    "pass_ua_to_upsteam": "传递UA到上游",
+    "password": "密码",
+    "root_folder_path": "根文件夹路径",
+    "token": "令牌",
+    "url": "URL",
+    "username": "用户名"
+  },
+  "OpenListShare": {
+    "forward_archive_requests": "转发归档请求",
+    "pwd": "密码",
+    "root_folder_path": "根文件夹路径",
+    "sid": "会话ID",
+    "url": "URL"
+  },
+  "PikPak": {
+    "captcha_token": "验证码令牌",
+    "device_id": "设备ID",
+    "disable_media_link": "禁用媒体链接",
+    "password": "密码",
+    "platform": "平台",
+    "platforms": {
+      "android": "安卓",
+      "pc": "电脑",
+      "web": "网页"
+    },
+    "refresh_token": "刷新令牌",
+    "root_folder_id": "根文件夹ID",
+    "username": "用户名"
+  },
+  "PikPakShare": {
+    "device_id": "设备ID",
+    "platform": "平台",
+    "platforms": {
+      "android": "安卓",
+      "pc": "电脑",
+      "web": "网页"
+    },
+    "root_folder_id": "根文件夹ID",
+    "share_id": "分享ID",
+    "share_pwd": "分享密码",
+    "use_transcoding_address": "使用转码地址"
+  },
+  "Quark": {
+    "cookie": "Cookie",
+    "only_list_video_file": "仅列出视频文件",
+    "order_by": "排序依据",
+    "order_bys": {
+      "file_name": "文件名",
+      "file_type": "文件类型",
+      "none": "无",
+      "updated_at": "更新时间"
+    },
+    "order_direction": "排序方向",
+    "order_directions": {
+      "asc": "升序",
+      "desc": "降序"
+    },
+    "root_folder_id": "根文件夹ID",
+    "use_transcoding_address": "使用转码地址",
+    "use_transcoding_address-tips": "可观看转码后的视频，并支持302重定向"
+  },
+  "QuarkOpen": {
+    "access_token": "访问令牌",
+    "api_url_address": "API URL地址",
+    "app_id": "应用ID",
+    "app_id-tips": "如果没有请保持为空",
+    "order_by": "排序依据",
+    "order_bys": {
+      "created_at": "创建时间",
+      "file_name": "文件名",
+      "file_type": "文件类型",
+      "none": "无",
+      "updated_at": "更新时间"
+    },
+    "order_direction": "排序方向",
+    "order_directions": {
+      "asc": "升序",
+      "desc": "降序"
+    },
+    "refresh_token": "刷新令牌",
+    "root_folder_id": "根文件夹ID",
+    "sign_key": "签名密钥",
+    "sign_key-tips": "如果没有请保持为空",
+    "use_online_api": "使用在线API"
+  },
+  "QuarkTV": {
+    "device_id": "设备ID",
+    "link_method": "链接方式",
+    "link_methods": {
+      "download": "下载",
+      "streaming": "流式播放"
+    },
+    "order_by": "排序依据",
+    "order_bys": {
+      "file_name": "文件名",
+      "updated_at": "更新时间"
+    },
+    "order_direction": "排序方向",
+    "order_directions": {
+      "asc": "升序",
+      "desc": "降序"
+    },
+    "query_token": "查询令牌",
+    "query_token-tips": "请勿编辑",
+    "refresh_token": "刷新令牌",
+    "root_folder_id": "根文件夹ID"
+  },
+  "S3": {
+    "access_key_id": "访问密钥ID",
+    "add_filename_to_disposition": "添加文件名到Content-Disposition",
+    "add_filename_to_disposition-tips": "将文件名添加到Content-Disposition头。",
+    "bucket": "存储桶",
+    "custom_host": "自定义主机",
+    "enable_custom_host_presign": "启用自定义主机预签名",
+    "endpoint": "端点",
+    "force_path_style": "强制路径样式",
+    "list_object_version": "列表对象版本",
+    "list_object_versions": {
+      "v1": "V1",
+      "v2": "V2"
+    },
+    "placeholder": "占位符",
+    "region": "区域",
+    "remove_bucket": "移除存储桶",
+    "remove_bucket-tips": "使用自定义主机时从路径中移除存储桶名称。",
+    "root_folder_path": "根文件夹路径",
+    "secret_access_key": "秘密访问密钥",
+    "session_token": "会话令牌",
+    "sign_url_expire": "签名URL过期时间"
+  },
+  "SFTP": {
+    "address": "Address",
+    "ignore_symlink_error": "Ignore symlink error",
+    "passphrase": "Passphrase",
+    "password": "Password",
+    "private_key": "Private key",
+    "root_folder_path": "Root folder path",
+    "username": "Username"
+  },
+  "SMB": {
+    "address": "Address",
+    "password": "Password",
+    "root_folder_path": "Root folder path",
+    "share_name": "Share name",
+    "username": "Username"
+  },
+  "Seafile": {
+    "address": "Address",
+    "password": "Password",
+    "repoId": "RepoId",
+    "repoPwd": "RepoPwd",
+    "root_folder_path": "Root folder path",
+    "token": "Token",
+    "username": "Username"
+  },
+  "Strm": {
+    "downloadFileTypes": "DownloadFileTypes",
+    "downloadFileTypes-tips": "Files need to download with strm (usally subtitles)",
+    "encodePath": "EncodePath",
+    "encodePath-tips": "encode the path in the strm file",
+    "filterFileTypes": "FilterFileTypes",
+    "filterFileTypes-tips": "Supports suffix name of strm file",
+    "localModel": "LocalModel",
+    "localModel-tips": "enable local mode",
+    "paths": "Paths",
+    "siteUrl": "SiteUrl",
+    "siteUrl-tips": "The prefix URL of the strm file"
+  },
+  "Teambition": {
+    "cookie": "Cookie",
+    "order_by": "Order by",
+    "order_bys": {
+      "created": "Created",
+      "fileName": "FileName",
+      "fileSize": "FileSize",
+      "updated": "Updated"
+    },
+    "order_direction": "Order direction",
+    "order_directions": {
+      "Asc": "Asc",
+      "Desc": "Desc"
+    },
+    "project_id": "Project id",
+    "region": "Region",
+    "regions": {
+      "china": "China",
+      "international": "International"
+    },
+    "root_folder_id": "Root folder id",
+    "use_s3_upload_method": "Use s3 upload method"
+  },
+  "Teldrive": {
+    "chunk_size": "Chunk size",
+    "chunk_size-tips": "Chunk size in MiB",
+    "cookie": "Cookie",
+    "cookie-tips": "access_token=xxx",
+    "root_folder_path": "Root folder path",
+    "upload_concurrency": "Upload concurrency",
+    "upload_concurrency-tips": "Concurrency upload requests",
+    "url": "Url",
+    "use_share_link": "Use share link",
+    "use_share_link-tips": "Create share link when getting link to support 302. If disabled, you need to enable web proxy."
+  },
+  "Terabox": {
+    "cookie": "Cookie",
+    "download_api": "Download api",
+    "download_apis": {
+      "crack": "Crack",
+      "official": "Official"
+    },
+    "order_by": "Order by",
+    "order_bys": {
+      "name": "Name",
+      "size": "Size",
+      "time": "Time"
+    },
+    "order_direction": "Order direction",
+    "order_directions": {
+      "asc": "Asc",
+      "desc": "Desc"
+    },
+    "root_folder_path": "Root folder path"
+  },
+  "Thunder": {
+    "captcha_token": "Captcha token",
+    "credit_key": "Credit key",
+    "credit_key-tips": "credit key,used for login",
+    "device_id": "Device id",
+    "password": "Password",
+    "root_folder_id": "Root folder id",
+    "username": "Username"
+  },
+  "ThunderBrowser": {
+    "captcha_token": "Captcha token",
+    "credit_key": "Credit key",
+    "credit_key-tips": "credit key,used for login",
+    "device_id": "Device id",
+    "password": "Password",
+    "remove_way": "Remove way",
+    "remove_ways": {
+      "delete": "Delete",
+      "trash": "Trash"
+    },
+    "root_folder_id": "Root folder id",
+    "safe_password": "Safe password",
+    "use_fluent_play": "Use fluent play",
+    "use_fluent_play-tips": "use fluent play for offline download,only magnet links supported",
+    "use_video_url": "Use video url",
+    "username": "Username"
+  },
+  "ThunderBrowserExpert": {
+    "algorithms": "Algorithms",
+    "algorithms-tips": "sign type is algorithms,this is required",
+    "captcha_sign": "Captcha sign",
+    "captcha_sign-tips": "sign type is captcha_sign,this is required",
+    "captcha_token": "Captcha token",
+    "client_id": "Client id",
+    "client_secret": "Client secret",
+    "client_version": "Client version",
+    "credit_key": "Credit key",
+    "credit_key-tips": "credit key,used for login",
+    "device_id": "Device id",
+    "download_user_agent": "Download user agent",
+    "login_type": "Login type",
+    "login_types": {
+      "refresh_token": "Refresh token",
+      "user": "User"
+    },
+    "package_name": "Package name",
+    "password": "Password",
+    "password-tips": "login type is user,this is required",
+    "refresh_token": "Refresh token",
+    "refresh_token-tips": "login type is refresh_token,this is required",
+    "remove_way": "Remove way",
+    "remove_ways": {
+      "delete": "Delete",
+      "trash": "Trash"
+    },
+    "root_folder_id": "Root folder id",
+    "safe_password": "Safe password",
+    "safe_password-tips": "super safe password",
+    "sign_type": "Sign type",
+    "sign_types": {
+      "algorithms": "Algorithms",
+      "captcha_sign": "Captcha sign"
+    },
+    "timestamp": "Timestamp",
+    "timestamp-tips": "sign type is captcha_sign,this is required",
+    "use_fluent_play": "Use fluent play",
+    "use_fluent_play-tips": "use fluent play for offline download,only magnet links supported",
+    "use_video_url": "Use video url",
+    "user_agent": "User agent",
+    "username": "Username",
+    "username-tips": "login type is user,this is required"
+  },
+  "ThunderExpert": {
+    "algorithms": "Algorithms",
+    "algorithms-tips": "sign type is algorithms,this is required",
+    "captcha_sign": "Captcha sign",
+    "captcha_sign-tips": "sign type is captcha_sign,this is required",
+    "captcha_token": "Captcha token",
+    "client_id": "Client id",
+    "client_secret": "Client secret",
+    "client_version": "Client version",
+    "credit_key": "Credit key",
+    "credit_key-tips": "credit key,used for login",
+    "device_id": "Device id",
+    "download_user_agent": "Download user agent",
+    "login_type": "Login type",
+    "login_types": {
+      "refresh_token": "Refresh token",
+      "user": "User"
+    },
+    "package_name": "Package name",
+    "password": "Password",
+    "password-tips": "login type is user,this is required",
+    "refresh_token": "Refresh token",
+    "refresh_token-tips": "login type is refresh_token,this is required",
+    "root_folder_id": "Root folder id",
+    "sign_type": "Sign type",
+    "sign_types": {
+      "algorithms": "Algorithms",
+      "captcha_sign": "Captcha sign"
+    },
+    "timestamp": "Timestamp",
+    "timestamp-tips": "sign type is captcha_sign,this is required",
+    "use_video_url": "Use video url",
+    "user_agent": "User agent",
+    "username": "Username",
+    "username-tips": "login type is user,this is required"
+  },
+  "ThunderX": {
+    "captcha_token": "Captcha token",
+    "password": "Password",
+    "root_folder_id": "Root folder id",
+    "use_video_url": "Use video url",
+    "username": "Username"
+  },
+  "ThunderXExpert": {
+    "algorithms": "Algorithms",
+    "algorithms-tips": "sign type is algorithms,this is required",
+    "captcha_sign": "Captcha sign",
+    "captcha_sign-tips": "sign type is captcha_sign,this is required",
+    "captcha_token": "Captcha token",
+    "client_id": "Client id",
+    "client_secret": "Client secret",
+    "client_version": "Client version",
+    "device_id": "Device id",
+    "download_user_agent": "Download user agent",
+    "login_type": "Login type",
+    "login_types": {
+      "refresh_token": "Refresh token",
+      "user": "User"
+    },
+    "package_name": "Package name",
+    "password": "Password",
+    "password-tips": "login type is user,this is required",
+    "refresh_token": "Refresh token",
+    "refresh_token-tips": "login type is refresh_token,this is required",
+    "root_folder_id": "Root folder id",
+    "sign_type": "Sign type",
+    "sign_types": {
+      "algorithms": "Algorithms",
+      "captcha_sign": "Captcha sign"
+    },
+    "timestamp": "Timestamp",
+    "timestamp-tips": "sign type is captcha_sign,this is required",
+    "use_video_url": "Use video url",
+    "user_agent": "User agent",
+    "username": "Username",
+    "username-tips": "login type is user,this is required"
+  },
+  "UC": {
+    "cookie": "Cookie",
+    "only_list_video_file": "Only list video file",
+    "order_by": "Order by",
+    "order_bys": {
+      "file_name": "File name",
+      "file_type": "File type",
+      "none": "None",
+      "updated_at": "Updated at"
+    },
+    "order_direction": "Order direction",
+    "order_directions": {
+      "asc": "Asc",
+      "desc": "Desc"
+    },
+    "root_folder_id": "Root folder id",
+    "use_transcoding_address": "Use transcoding address",
+    "use_transcoding_address-tips": "You can watch the transcoded video and support 302 redirection"
+  },
+  "UCTV": {
+    "device_id": "Device id",
+    "link_method": "Link method",
+    "link_methods": {
+      "download": "Download",
+      "streaming": "Streaming"
+    },
+    "order_by": "Order by",
+    "order_bys": {
+      "file_name": "File name",
+      "updated_at": "Updated at"
+    },
+    "order_direction": "Order direction",
+    "order_directions": {
+      "asc": "Asc",
+      "desc": "Desc"
+    },
+    "query_token": "Query token",
+    "query_token-tips": "don't edit'",
+    "refresh_token": "Refresh token",
+    "root_folder_id": "Root folder id"
+  },
+  "USS": {
+    "anti_theft_chain_token": "Anti theft chain token",
+    "bucket": "Bucket",
+    "endpoint": "Endpoint",
+    "operator_name": "Operator name",
+    "operator_password": "Operator password",
+    "root_folder_path": "Root folder path",
+    "sign_url_expire": "Sign url expire"
+  },
+  "UrlTree": {
+    "head_size": "Head size",
+    "head_size-tips": "Use head method to get file size, but it may be failed.",
+    "url_structure": "Url structure",
+    "url_structure-tips": "structure:FolderName:\n  [FileName:][FileSize:][Modified:]Url",
+    "writable": "Writable"
+  },
+  "Virtual": {
+    "max_file_size": "Max file size",
+    "min_file_size": "Min file size",
+    "num_file": "Num file",
+    "num_folder": "Num folder",
+    "root_folder_path": "Root folder path"
+  },
+  "WebDav": {
+    "address": "Address",
+    "password": "Password",
+    "root_folder_path": "Root folder path",
+    "tls_insecure_skip_verify": "Tls insecure skip verify",
+    "username": "Username",
+    "vendor": "Vendor",
+    "vendors": {
+      "other": "Other",
+      "sharepoint": "Sharepoint"
+    }
+  },
+  "WeiYun": {
+    "cookies": "Cookies",
+    "order_by": "Order by",
+    "order_bys": {
+      "name": "Name",
+      "size": "Size",
+      "updated_at": "Updated at"
+    },
+    "order_direction": "Order direction",
+    "order_directions": {
+      "asc": "Asc",
+      "desc": "Desc"
+    },
+    "root_folder_id": "Root folder id",
+    "upload_thread": "Upload thread",
+    "upload_thread-tips": "4\u003c=thread\u003c=32"
+  },
+  "WoPan": {
+    "access_token": "Access token",
+    "family_id": "Family id",
+    "family_id-tips": "Keep it empty if you want to use your personal drive",
+    "refresh_token": "Refresh token",
+    "root_folder_id": "Root folder id",
+    "sort_rule": "Sort rule",
+    "sort_rules": {
+      "name_asc": "Name asc",
+      "name_desc": "Name desc",
+      "size_asc": "Size asc",
+      "size_desc": "Size desc",
+      "time_asc": "Time asc",
+      "time_desc": "Time desc"
+    }
+  },
+  "YandexDisk": {
+    "api_url_address": "Api url address",
+    "client_id": "Client id",
+    "client_secret": "Client secret",
+    "order_by": "Order by",
+    "order_bys": {
+      "created": "Created",
+      "modified": "Modified",
+      "name": "Name",
+      "path": "Path",
+      "size": "Size"
+    },
+    "order_direction": "Order direction",
+    "order_directions": {
+      "asc": "Asc",
+      "desc": "Desc"
+    },
+    "refresh_token": "Refresh token",
+    "root_folder_path": "Root folder path",
+    "use_online_api": "Use online api"
+  },
+  "config": {
+    "115 Cloud": {},
+    "115 Open": {},
+    "115 Share": {},
+    "123 Open": {},
+    "123Pan": {},
+    "123PanLink": {},
+    "123PanShare": {},
+    "139Yun": {},
+    "189Cloud": {
+      "alert": "You can try to use 189PC driver if this driver does not work."
+    },
+    "189CloudPC": {},
+    "189CloudTV": {},
+    "Alias": {},
+    "Aliyundrive": {
+      "alert": "There may be an infinite loop bug in this driver.\nDeprecated, no longer maintained and will be removed in a future version.\nWe recommend using the official driver AliyundriveOpen."
+    },
+    "AliyundriveOpen": {},
+    "AliyundriveShare": {},
+    "Azure Blob Storage": {},
+    "BaiduNetdisk": {},
+    "BaiduPhoto": {},
+    "CNB Releases": {},
+    "ChaoXingGroupDrive": {},
+    "Chunk": {},
+    "Cloudreve": {},
+    "Cloudreve V4": {},
+    "Crypt": {},
+    "Degoo": {},
+    "Doge": {},
+    "Doubao": {},
+    "DoubaoShare": {},
+    "Dropbox": {},
+    "FTP": {},
+    "FebBox": {},
+    "FeijiPan": {},
+    "GitHub API": {},
+    "GitHub Releases": {},
+    "GoogleDrive": {},
+    "GooglePhoto": {},
+    "HalalCloud": {},
+    "ILanZou": {},
+    "IPFS API": {},
+    "KodBox": {},
+    "Lanzou": {},
+    "LenovoNasShare": {},
+    "Local": {},
+    "MediaTrack": {},
+    "Mega_nz": {},
+    "Misskey": {},
+    "MoPan": {
+      "alert": "This network disk may store your password in clear text. Please set your password carefully"
+    },
+    "NeteaseMusic": {},
+    "Onedrive": {},
+    "Onedrive Sharelink": {},
+    "OnedriveAPP": {},
+    "OpenList": {},
+    "OpenListShare": {},
+    "PikPak": {},
+    "PikPakShare": {},
+    "Quark": {},
+    "QuarkOpen": {},
+    "QuarkTV": {},
+    "S3": {},
+    "SFTP": {},
+    "SMB": {},
+    "Seafile": {},
+    "Strm": {},
+    "Teambition": {},
+    "Teldrive": {},
+    "Terabox": {},
+    "Thunder": {},
+    "ThunderBrowser": {},
+    "ThunderBrowserExpert": {},
+    "ThunderExpert": {},
+    "ThunderX": {},
+    "ThunderXExpert": {},
+    "UC": {},
+    "UCTV": {},
+    "USS": {},
+    "UrlTree": {},
+    "Virtual": {},
+    "WebDav": {},
+    "WeiYun": {},
+    "WoPan": {},
+    "YandexDisk": {}
+  },
+  "drivers": {
+    "115 Cloud": "115 Cloud",
+    "115 Open": "115 Open",
+    "115 Share": "115 Share",
+    "123 Open": "123 Open",
+    "123Pan": "123Pan",
+    "123PanLink": "123PanLink",
+    "123PanShare": "123PanShare",
+    "139Yun": "139Yun",
+    "189Cloud": "189Cloud",
+    "189CloudPC": "189CloudPC",
+    "189CloudTV": "189CloudTV",
+    "Alias": "Alias",
+    "Aliyundrive": "Aliyundrive",
+    "AliyundriveOpen": "AliyundriveOpen",
+    "AliyundriveShare": "AliyundriveShare",
+    "Azure Blob Storage": "Azure Blob Storage",
+    "BaiduNetdisk": "BaiduNetdisk",
+    "BaiduPhoto": "BaiduPhoto",
+    "CNB Releases": "CNB Releases",
+    "ChaoXingGroupDrive": "ChaoXingGroupDrive",
+    "Chunk": "Chunk",
+    "Cloudreve": "Cloudreve",
+    "Cloudreve V4": "Cloudreve V4",
+    "Crypt": "Crypt",
+    "Degoo": "Degoo",
+    "Doge": "Doge",
+    "Doubao": "Doubao",
+    "DoubaoShare": "DoubaoShare",
+    "Dropbox": "Dropbox",
+    "FTP": "FTP",
+    "FebBox": "FebBox",
+    "FeijiPan": "FeijiPan",
+    "GitHub API": "GitHub API",
+    "GitHub Releases": "GitHub Releases",
+    "GoogleDrive": "GoogleDrive",
+    "GooglePhoto": "GooglePhoto",
+    "HalalCloud": "HalalCloud",
+    "ILanZou": "ILanZou",
+    "IPFS API": "IPFS API",
+    "KodBox": "KodBox",
+    "Lanzou": "Lanzou",
+    "LenovoNasShare": "LenovoNasShare",
+    "Local": "Local",
+    "MediaTrack": "MediaTrack",
+    "Mega_nz": "Mega nz",
+    "Misskey": "Misskey",
+    "MoPan": "MoPan",
+    "NeteaseMusic": "NeteaseMusic",
+    "Onedrive": "Onedrive",
+    "Onedrive Sharelink": "Onedrive Sharelink",
+    "OnedriveAPP": "OnedriveAPP",
+    "OpenList": "OpenList",
+    "OpenListShare": "OpenListShare",
+    "PikPak": "PikPak",
+    "PikPakShare": "PikPakShare",
+    "Quark": "Quark",
+    "QuarkOpen": "QuarkOpen",
+    "QuarkTV": "QuarkTV",
+    "S3": "S3",
+    "SFTP": "SFTP",
+    "SMB": "SMB",
+    "Seafile": "Seafile",
+    "Strm": "Strm",
+    "Teambition": "Teambition",
+    "Teldrive": "Teldrive",
+    "Terabox": "Terabox",
+    "Thunder": "Thunder",
+    "ThunderBrowser": "ThunderBrowser",
+    "ThunderBrowserExpert": "ThunderBrowserExpert",
+    "ThunderExpert": "ThunderExpert",
+    "ThunderX": "ThunderX",
+    "ThunderXExpert": "ThunderXExpert",
+    "UC": "UC",
+    "UCTV": "UCTV",
+    "USS": "USS",
+    "UrlTree": "UrlTree",
+    "Virtual": "Virtual",
+    "WebDav": "WebDav",
+    "WeiYun": "WeiYun",
+    "WoPan": "WoPan",
+    "YandexDisk": "YandexDisk"
+  }
+}
+
