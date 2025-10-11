@@ -1,6 +1,9 @@
 import axios from "axios"
 import { RenameObj } from "~/types"
 
+export let ai_url = import.meta.env.VITE_AI_URL as string
+export let ai_api_key = import.meta.env.VITE_AI_API_KEY as string
+
 // 限制速率：最多 2 个请求/秒
 const RATE_LIMIT = 2
 const INTERVAL = 1000
@@ -30,16 +33,28 @@ export const fsAiRename = (
   tempName: string,
   prompt: string,
 ): Promise<RenameObj> => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const task = async () => {
       try {
-        const url = "https://api.modelarts-maas.com/v1/chat/completions"
-        const apiKey =
-          "ntIHrEUbDYO-KmFSjy7J86p2BfcXzgwOMqJNvuJs2_nH-HKpeTxKeg2VfUfJOrVFKP3uhL2bTeOM5uWJB8GNbg" // 替换成你的 Key
+        const url = ai_url
+        const apiKey = ai_api_key
 
         const headers = {
           "Content-Type": "application/json",
           Authorization: `Bearer ${apiKey}`,
+        }
+
+        if (!prompt.trim()) {
+          prompt =
+            "你是一个文件重命名助手。\n" +
+            "请将输入文件名改写为符合 Jellyfin 命名规范的完整文件名。\n" +
+            "输出格式固定为：\n" +
+            "剧名.SxxExx.年份.扩展名\n" +
+            "要求：\n" +
+            "1. 保留输入文件的扩展名；\n" +
+            "2. 不输出任何多余文字；\n" +
+            "3. 若无年份或附加信息，可省略；\n" +
+            "4. 保留中文。\n"
         }
 
         const data = {
@@ -47,12 +62,11 @@ export const fsAiRename = (
           messages: [
             {
               role: "system",
-              content:
-                "你是一个文件重命名助手。请返回符合 Jellyfin 命名规则的文件名（格式：剧名.SxxExx.年份.附加信息，不带路径和扩展名）。只返回文件名，不要多余文字。",
+              content: prompt,
             },
             {
               role: "user",
-              content: `提示:${prompt}; 文件名:${srcName}; 临时名:${tempName}`,
+              content: `剧名:${tempName}; 文件名:${srcName};`,
             },
           ],
         }
@@ -66,7 +80,12 @@ export const fsAiRename = (
           new_name: aiNewName,
         })
       } catch (err) {
-        reject(err)
+        console.error(`fsAiRename error for ${srcName}:`, err)
+        // 出错时返回原文件名，避免上层阻塞
+        resolve({
+          src_name: srcName,
+          new_name: srcName + "_error",
+        })
       } finally {
         active--
         processQueue()
