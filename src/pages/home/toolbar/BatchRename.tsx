@@ -158,19 +158,13 @@ export const BatchRename = () => {
 
       // 注意：这里 map 里是 async 回调
       const promises = selectedObjs().map(async (obj) => {
-        let suffix = ""
-        const lastDotIndex = obj.name.lastIndexOf(".")
-        if (lastDotIndex !== -1) {
-          suffix = obj.name.substring(lastDotIndex + 1)
-        }
-
         // 调用限速版 fsAiRename（内部已控制 2/s）
         const aiResult = await fsAiRename(obj.name, tempName, prompt)
-        const aiNewName = aiResult.new_name.replace(`.${suffix}`, "")
+        const aiNewName = aiResult.new_name
 
         return {
           src_name: obj.name,
-          new_name: `${aiNewName}.${suffix}`,
+          new_name: `${aiNewName}`,
         }
       })
 
@@ -234,7 +228,7 @@ export const BatchRename = () => {
               <Input
                 id="modal-input1" // Update id to "modal-input1" for first input
                 type={"string"}
-                value={srcName() || (type() === "3" ? "" : "")}
+                value={srcName()}
                 onInput={(e) => {
                   setSrcName(e.currentTarget.value)
                 }}
