@@ -25,6 +25,7 @@ import { createSignal, For, onCleanup, Show } from "solid-js"
 import { selectedObjs } from "~/store"
 import { RenameObj } from "~/types"
 import { RenameItem } from "~/pages/home/toolbar/RenameItem"
+import { fsAiRename } from "~/utils/deepseek"
 
 export const BatchRename = () => {
   const {
@@ -62,7 +63,7 @@ export const BatchRename = () => {
     bus.off("tool", handler)
   })
 
-  const submit = () => {
+  const submit = async () => {
     if (!srcName() || !newName()) {
       // Check if both input values are not empty
       notify.warning(t("global.empty_input"))
@@ -70,7 +71,7 @@ export const BatchRename = () => {
     }
     const replaceRegexp = new RegExp(srcName(), "g")
 
-    let matchNames: RenameObj[]
+    let matchNames: RenameObj[] = []
     if (type() === "1") {
       matchNames = selectedObjs()
         .filter((obj) => obj.name.match(srcName()))
@@ -132,7 +133,7 @@ export const BatchRename = () => {
           }
           return renameObj
         })
-    } else {
+    } else if (type() === "2") {
       let tempNum = newName()
       matchNames = selectedObjs().map((obj) => {
         let suffix = ""
@@ -150,6 +151,25 @@ export const BatchRename = () => {
           .padStart(tempNum.length, "0")
         return renameObj
       })
+    } else {
+      // AI 重命名逻辑（异步）
+      let prompt = srcName()
+      let tempName = newName()
+
+      // 注意：这里 map 里是 async 回调
+      const promises = selectedObjs().map(async (obj) => {
+        // 调用限速版 fsAiRename（内部已控制 2/s）
+        const aiResult = await fsAiRename(obj.name, tempName, prompt)
+        const aiNewName = aiResult.new_name
+
+        return {
+          src_name: obj.name,
+          new_name: `${aiNewName}`,
+        }
+      })
+
+      // 等待所有 Promise 完成
+      matchNames = await Promise.all(promises)
     }
 
     setMatchNames(matchNames)
@@ -182,12 +202,15 @@ export const BatchRename = () => {
                   setNewNameType("string")
                 } else if (event === "2") {
                   setNewNameType("number")
+                } else if (event === "3") {
+                  setNewNameType("string")
                 }
               }}
             >
               <HStack spacing="$4">
                 <Radio value="1">{t("home.toolbar.regex_rename")}</Radio>
                 <Radio value="2">{t("home.toolbar.sequential_renaming")}</Radio>
+                <Radio value="3">{t("home.toolbar.ai_rename")}</Radio>
               </HStack>
             </RadioGroup>
             <VStack spacing="$2">
@@ -197,6 +220,9 @@ export const BatchRename = () => {
                 </Show>
                 <Show when={type() === "2"}>
                   {t("home.toolbar.sequential_renaming_desc")}
+                </Show>
+                <Show when={type() === "3"}>
+                  {t("home.toolbar.ai_rename_desc")}
                 </Show>
               </p>
               <Input
@@ -299,7 +325,16 @@ export const BatchRename = () => {
             <Button
               loading={loading()}
               onClick={async () => {
-                const resp = await ok(pathname(), matchNames())
+                const validItems = matchNames().filter(
+                  (item: { src_name: string; new_name: string }) =>
+                    typeof item.new_name === "string" && !item.new_name.endsWith("_error")
+                );
+
+                if (!validItems || validItems.length === 0) {
+                  // 可以给出提示，也可以直接静默返回
+                  return
+                }
+                const resp = await ok(pathname(), validItems)
                 handleRespWithNotifySuccess(resp, () => {
                   setMatchNames([])
                   setSrcName("")
