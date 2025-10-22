@@ -25,7 +25,6 @@ import { createSignal, For, onCleanup, Show } from "solid-js"
 import { selectedObjs } from "~/store"
 import { RenameObj } from "~/types"
 import { RenameItem } from "~/pages/home/toolbar/RenameItem"
-import { fsAiRename } from "~/utils/deepseek"
 
 export const BatchRename = () => {
   const {
@@ -63,15 +62,15 @@ export const BatchRename = () => {
     bus.off("tool", handler)
   })
 
-  const submit = async () => {
-    if (!srcName() || !newName()) {
+  const submit = () => {
+    if (!srcName()) {
       // Check if both input values are not empty
       notify.warning(t("global.empty_input"))
       return
     }
     const replaceRegexp = new RegExp(srcName(), "g")
 
-    let matchNames: RenameObj[] = []
+    let matchNames: RenameObj[]
     if (type() === "1") {
       matchNames = selectedObjs()
         .filter((obj) => obj.name.match(srcName()))
@@ -170,6 +169,16 @@ export const BatchRename = () => {
 
       // 等待所有 Promise 完成
       matchNames = await Promise.all(promises)
+    } else {
+      matchNames = selectedObjs()
+        .filter((obj) => obj.name.indexOf(srcName()) !== -1)
+        .map((obj) => {
+          const renameObj: RenameObj = {
+            src_name: obj.name,
+            new_name: obj.name.replace(srcName(), newName()),
+          }
+          return renameObj
+        })
     }
 
     setMatchNames(matchNames)
@@ -202,15 +211,12 @@ export const BatchRename = () => {
                   setNewNameType("string")
                 } else if (event === "2") {
                   setNewNameType("number")
-                } else if (event === "3") {
-                  setNewNameType("string")
                 }
               }}
             >
               <HStack spacing="$4">
                 <Radio value="1">{t("home.toolbar.regex_rename")}</Radio>
                 <Radio value="2">{t("home.toolbar.sequential_renaming")}</Radio>
-                <Radio value="3">{t("home.toolbar.ai_rename")}</Radio>
                 <Radio value="3">{t("home.toolbar.find_replace")}</Radio>
               </HStack>
             </RadioGroup>
@@ -227,6 +233,9 @@ export const BatchRename = () => {
                 </Show>
                 <Show when={type() === "3"}>
                   {t("home.toolbar.find_replace_desc")}
+                </Show>
+                <Show when={type() === "3"}>
+                  {t("home.toolbar.ai_rename_desc")}
                 </Show>
               </p>
               <Input
