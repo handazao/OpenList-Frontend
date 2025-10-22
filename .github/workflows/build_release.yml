@@ -113,6 +113,9 @@ jobs:
         id: generate_changelog
         run: |
           npx changelogithub --output ${{ github.workspace }}-CHANGELOG.txt || echo "" > ${{ github.workspace }}-CHANGELOG.txt
+          
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build Release
         run: |
