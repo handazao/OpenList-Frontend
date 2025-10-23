@@ -17,6 +17,7 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -24,15 +25,24 @@ jobs:
           fetch-depth: 0
           submodules: recursive
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-
-      - name: Install pnpm
+      - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          run_install: false
+          version: 9
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
 
       - name: Setup Git identity
         run: |
@@ -52,17 +62,17 @@ jobs:
       - name: Update version in package.json
         run: |
           jq --arg version "${{ steps.version.outputs.version }}" '.version = $version' package.json > package.json.tmp && mv package.json.tmp package.json
-          git add package.json
-          git commit -m "chore: release v${{ steps.version.outputs.version }}" --allow-empty
-          git tag -f "v${{ steps.version.outputs.version }}" -m "Release v${{ steps.version.outputs.version }}"
-
-      - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
 
       - name: Generate changelog
         id: changelog
         run: |
           npx changelogithub --output ${{ github.workspace }}/CHANGELOG.txt || echo "" > ${{ github.workspace }}/CHANGELOG.txt
+
+      - name: Commit and Tag release
+        run: |
+          git add package.json
+          git commit -m "chore: release v${{ steps.version.outputs.version }}" --allow-empty
+          git tag -f "v${{ steps.version.outputs.version }}" -m "Release v${{ steps.version.outputs.version }}"
 
       - name: Build Release
         run: |
@@ -97,6 +107,7 @@ jobs:
             "v${{ steps.version.outputs.version }}" \
             --title "Release v${{ steps.version.outputs.version }}" \
             --notes-file "${{ github.workspace }}/CHANGELOG.txt" \
+            --latest \
             dist/openlist-frontend-dist-v*.tar.gz \
             lite-dist/openlist-frontend-dist-lite-v*.tar.gz \
             dist/i18n.tar.gz
