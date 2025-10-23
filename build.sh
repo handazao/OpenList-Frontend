@@ -145,7 +145,7 @@ build_project() {
     if [[ "$SKIP_I18N" == "false" ]]; then
         pnpm i18n:release
     else
-        # fetch_i18n_from_release
+        : # fetch_i18n_from_release
     fi
 
     log_step "==== Building project ===="
@@ -163,7 +163,7 @@ fetch_i18n_from_release() {
     if echo -n "$release_response" | grep -q "Not Found"; then
         log_warning "Failed to fetch release info. Skipping i18n fetch."
     else
-        # extract_i18n_tarball "$release_response"
+        : # extract_i18n_tarball "$release_response"
     fi
 }
 
