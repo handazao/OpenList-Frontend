@@ -198,7 +198,7 @@ export const BatchRename = () => {
               defaultValue="1"
               onChange={(event) => {
                 setType(event)
-                if (event === "1") {
+                if (event === "1" || event === "3") {
                   setNewNameType("string")
                 } else if (event === "2") {
                   setNewNameType("number")
@@ -211,6 +211,7 @@ export const BatchRename = () => {
                 <Radio value="1">{t("home.toolbar.regex_rename")}</Radio>
                 <Radio value="2">{t("home.toolbar.sequential_renaming")}</Radio>
                 <Radio value="3">{t("home.toolbar.ai_rename")}</Radio>
+                <Radio value="3">{t("home.toolbar.find_replace")}</Radio>
               </HStack>
             </RadioGroup>
             <VStack spacing="$2">
@@ -223,6 +224,9 @@ export const BatchRename = () => {
                 </Show>
                 <Show when={type() === "3"}>
                   {t("home.toolbar.ai_rename_desc")}
+                </Show>
+                <Show when={type() === "3"}>
+                  {t("home.toolbar.find_replace_desc")}
                 </Show>
               </p>
               <Input
@@ -266,7 +270,7 @@ export const BatchRename = () => {
             </Button>
             <Button
               onClick={() => submit()}
-              disabled={!srcName() || !newName()}
+              disabled={type() === "2" || type() === "3" ? !srcName() || !newName() : !srcName()}
             >
               {t("global.ok")}
             </Button>
