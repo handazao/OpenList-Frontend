@@ -9,6 +9,7 @@ import {
   RenameObj,
   ArchiveMeta,
   ArchiveList,
+  IDName,
 } from "~/types"
 import { r } from "."
 
@@ -104,8 +105,16 @@ export const fsCopy = (
   return r.post("/fs/copy", { src_dir, dst_dir, names, overwrite })
 }
 
-export const fsRemove = (dir: string, names: string[]): PEmptyResp => {
-  return r.post("/fs/remove", { dir, names })
+export const fsRemove = (dir: string, names: IDName[]): PEmptyResp => {
+  return r.post(
+    "/fs/remove",
+    { names },
+    {
+      headers: {
+        "File-Path": encodeURIComponent(dir),
+      },
+    },
+  )
 }
 
 export const fsRemoveEmptyDirectory = (src_dir: string): PEmptyResp => {
