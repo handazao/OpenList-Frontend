@@ -25,6 +25,7 @@ import { createSignal, For, onCleanup, Show } from "solid-js"
 import { selectedObjs } from "~/store"
 import { RenameObj } from "~/types"
 import { RenameItem } from "~/pages/home/toolbar/RenameItem"
+import { fsAiRename } from "~/utils/deepseek"
 
 export const BatchRename = () => {
   const {
@@ -62,15 +63,15 @@ export const BatchRename = () => {
     bus.off("tool", handler)
   })
 
-  const submit = () => {
-    if (!srcName()) {
+  const submit = async () => {
+    if (!srcName() || !newName()) {
       // Check if both input values are not empty
       notify.warning(t("global.empty_input"))
       return
     }
     const replaceRegexp = new RegExp(srcName(), "g")
 
-    let matchNames: RenameObj[]
+    let matchNames: RenameObj[] = []
     if (type() === "1") {
       matchNames = selectedObjs()
         .filter((obj) => obj.name.match(srcName()))
@@ -150,7 +151,7 @@ export const BatchRename = () => {
           .padStart(tempNum.length, "0")
         return renameObj
       })
-    } else {
+    } else if (type() === "0") {
       // AI 重命名逻辑（异步）
       let prompt = srcName()
       let tempName = newName()
@@ -207,7 +208,7 @@ export const BatchRename = () => {
               defaultValue="1"
               onChange={(event) => {
                 setType(event)
-                if (event === "1" || event === "3") {
+                if (event === "0" || event === "1" || event === "3") {
                   setNewNameType("string")
                 } else if (event === "2") {
                   setNewNameType("number")
@@ -215,6 +216,7 @@ export const BatchRename = () => {
               }}
             >
               <HStack spacing="$4">
+                <Radio value="0">{t("home.toolbar.ai_rename")}</Radio>
                 <Radio value="1">{t("home.toolbar.regex_rename")}</Radio>
                 <Radio value="2">{t("home.toolbar.sequential_renaming")}</Radio>
                 <Radio value="3">{t("home.toolbar.find_replace")}</Radio>
@@ -222,6 +224,9 @@ export const BatchRename = () => {
             </RadioGroup>
             <VStack spacing="$2">
               <p style={{ margin: "10px 0" }}>
+                <Show when={type() === "0"}>
+                  {t("home.toolbar.ai_rename_desc")}
+                </Show>
                 <Show when={type() === "1"}>
                   {t("home.toolbar.regular_rename")}
                 </Show>
@@ -229,13 +234,7 @@ export const BatchRename = () => {
                   {t("home.toolbar.sequential_renaming_desc")}
                 </Show>
                 <Show when={type() === "3"}>
-                  {t("home.toolbar.ai_rename_desc")}
-                </Show>
-                <Show when={type() === "3"}>
                   {t("home.toolbar.find_replace_desc")}
-                </Show>
-                <Show when={type() === "3"}>
-                  {t("home.toolbar.ai_rename_desc")}
                 </Show>
               </p>
               <Input
@@ -344,8 +343,9 @@ export const BatchRename = () => {
               onClick={async () => {
                 const validItems = matchNames().filter(
                   (item: { src_name: string; new_name: string }) =>
-                    typeof item.new_name === "string" && !item.new_name.endsWith("_error")
-                );
+                    typeof item.new_name === "string" &&
+                    !item.new_name.endsWith("_error"),
+                )
 
                 if (!validItems || validItems.length === 0) {
                   // 可以给出提示，也可以直接静默返回
