@@ -2,7 +2,6 @@ import axios from "axios"
 import { initAIConfig } from "~/utils/ai_config"
 import { RenameObj } from "~/types"
 
-
 export let ai_url = ""
 export let ai_api_key = ""
 export let ai_model = ""
@@ -22,26 +21,22 @@ loadAIConfig()
 // 限制速率：最多 2 个请求/秒
 const RATE_LIMIT = 2
 const INTERVAL = 1000
+const GAP = INTERVAL / RATE_LIMIT // 500ms 执行一次任务
 
 let queue: (() => void)[] = []
-let active = 0
+let timer: number | null = null
 
-function processQueue() {
-  while (active < RATE_LIMIT && queue.length > 0) {
+function startScheduler() {
+  if (timer !== null) return
+  timer = setInterval(() => {
     const task = queue.shift()
-    if (task) {
-      active++
-      task()
+    if (task) task()
+    if (queue.length === 0) {
+      clearInterval(timer!)
+      timer = null
     }
-  }
-  setTimeout(() => {
-    active = 0
-    processQueue()
-  }, INTERVAL)
+  }, GAP)
 }
-
-// 启动调度器
-processQueue()
 
 export const fsAiRename = (
   srcName: string,
@@ -89,14 +84,8 @@ export const fsAiRename = (
         const data = {
           model: aiModel,
           messages: [
-            {
-              role: "system",
-              content: prompt,
-            },
-            {
-              role: "user",
-              content: `剧名:${tempName}; 文件名:${srcName};`,
-            },
+            { role: "system", content: prompt },
+            { role: "user", content: `剧名:${tempName}; 文件名:${srcName};` },
           ],
         }
 
@@ -104,24 +93,14 @@ export const fsAiRename = (
         const aiNewName =
           resp.data?.choices?.[0]?.message?.content?.trim() || srcName
 
-        resolve({
-          src_name: srcName,
-          new_name: aiNewName,
-        })
+        resolve({ src_name: srcName, new_name: aiNewName })
       } catch (err) {
         console.error(`fsAiRename error for ${srcName}:`, err)
-        // 出错时返回原文件名，避免上层阻塞
-        resolve({
-          src_name: srcName,
-          new_name: srcName + "_error",
-        })
-      } finally {
-        active--
-        processQueue()
+        resolve({ src_name: srcName, new_name: srcName + "_error" })
       }
     }
 
     queue.push(task)
-    processQueue()
+    startScheduler()
   })
 }
