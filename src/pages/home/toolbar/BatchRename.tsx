@@ -37,7 +37,7 @@ export const BatchRename = () => {
   const [loading, ok] = useFetch(fsBatchRename)
   const { pathname } = useRouter()
   const { refresh } = usePath()
-  const [type, setType] = createSignal("1")
+  const [type, setType] = createSignal("0")
   const [srcName, setSrcName] = createSignal("")
   const [newName, setNewName] = createSignal("")
   const [newNameType, setNewNameType] = createSignal("string")
@@ -200,12 +200,12 @@ export const BatchRename = () => {
         }}
       >
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent width="600px" maxWidth="80%">
           {/* <ModalCloseButton /> */}
           <ModalHeader>{t("home.toolbar.batch_rename")}</ModalHeader>
           <ModalBody>
             <RadioGroup
-              defaultValue="1"
+              value={type()}
               onChange={(event) => {
                 setType(event)
                 if (event === "0" || event === "1" || event === "3") {
@@ -268,7 +268,7 @@ export const BatchRename = () => {
           <ModalFooter display="flex" gap="$2">
             <Button
               onClick={() => {
-                setType("1")
+                setType("0")
                 setNewNameType("string")
                 onClose()
               }}
@@ -319,7 +319,7 @@ export const BatchRename = () => {
             <Button
               onClick={() => {
                 setMatchNames([])
-                setType("1")
+                setType("0")
                 setNewNameType("string")
                 closePreviewModal()
                 onClose()
@@ -356,7 +356,7 @@ export const BatchRename = () => {
                   setMatchNames([])
                   setSrcName("")
                   setNewName("")
-                  setType("1")
+                  setType("0")
                   setNewNameType("string")
                   refresh()
                   onClose()

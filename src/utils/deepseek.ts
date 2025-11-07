@@ -1,8 +1,23 @@
 import axios from "axios"
+import { initAIConfig } from "~/utils/ai_config"
 import { RenameObj } from "~/types"
 
-export let ai_url = import.meta.env.VITE_AI_URL as string
-export let ai_api_key = import.meta.env.VITE_AI_API_KEY as string
+
+export let ai_url = ""
+export let ai_api_key = ""
+export let ai_model = ""
+
+// 异步初始化配置
+async function loadAIConfig() {
+  const cfg = await initAIConfig()
+  ai_url = cfg.url
+  ai_api_key = cfg.apiKey
+  ai_model = cfg.model
+  console.log("AI Config Loaded:", cfg)
+}
+
+// 立即执行初始化
+loadAIConfig()
 
 // 限制速率：最多 2 个请求/秒
 const RATE_LIMIT = 2
@@ -38,6 +53,7 @@ export const fsAiRename = (
       try {
         const url = ai_url
         const apiKey = ai_api_key
+        const aiModel = ai_model
 
         const headers = {
           "Content-Type": "application/json",
@@ -53,11 +69,9 @@ export const fsAiRename = (
             "要求：\n" +
             "1. 保留输入文件的扩展名；\n" +
             "2. 不输出任何多余文字；\n" +
-
             "3. 若无年份或附加信息，可省略.；\n" +
             "4. 保留中文。\n" +
-            "5. 将名称中的..改为.";
-
+            "5. 将名称中的..改为."
 
           /*prompt =
             "你是一个文件重命名助手。\n" +
@@ -70,11 +84,10 @@ export const fsAiRename = (
             "3. 若无年份或附加信息，可省略；\n" +
             "4. 保留中文；\n" +
             "5. 将名称中的..改为.";*/
-
         }
 
         const data = {
-          model: "DeepSeek-V3",
+          model: aiModel,
           messages: [
             {
               role: "system",
