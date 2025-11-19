@@ -19,7 +19,7 @@ async function loadAIConfig() {
 loadAIConfig()
 
 // 限制速率：最多 2 个请求/秒
-const RATE_LIMIT = 2
+const RATE_LIMIT = 10
 const INTERVAL = 1000
 const GAP = INTERVAL / RATE_LIMIT // 500ms 执行一次任务
 
@@ -90,8 +90,9 @@ export const fsAiRename = (
         }
 
         const resp = await axios.post(url, data, { headers })
-        const aiNewName =
+        const aiNewName = (
           resp.data?.choices?.[0]?.message?.content?.trim() || srcName
+        ).replace(/\.\.+/g, ".")
 
         resolve({ src_name: srcName, new_name: aiNewName })
       } catch (err) {

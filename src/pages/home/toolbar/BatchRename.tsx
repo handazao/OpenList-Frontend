@@ -344,7 +344,8 @@ export const BatchRename = () => {
                 const validItems = matchNames().filter(
                   (item: { src_name: string; new_name: string }) =>
                     typeof item.new_name === "string" &&
-                    !item.new_name.endsWith("_error"),
+                    !item.new_name.endsWith("_error") &&
+                    item.src_name != item.new_name,
                 )
 
                 if (!validItems || validItems.length === 0) {
